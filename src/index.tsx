@@ -4,21 +4,22 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import TopPage from "./pages/top/TopPage";
+import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
+import FrontPage from "./pages/FrontPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
         <Routes>
-          <Route path="/" element={<TopPage />} />
+          <Route path="/" element={<FrontPage />} />
         </Routes>
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
